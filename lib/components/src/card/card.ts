@@ -1,6 +1,6 @@
 import { customElement } from 'lit/decorators';
 import { CardBase } from './card-base';
-import styles from '../card/card.scss';
+import styles from './card.scss';
 
 declare global {
     interface HTMLElementTagNameMap {
@@ -10,6 +10,5 @@ declare global {
 
 @customElement('td-card')
 export class CovalentCardBase extends CardBase {
-
   static override styles = [styles];  
 }
