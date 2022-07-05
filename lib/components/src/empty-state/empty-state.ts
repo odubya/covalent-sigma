@@ -20,7 +20,7 @@ export class CovalentEmptyStateBase extends LitElement {
     return html`
       <div class="content mdc-typography">
         <div class="icon-background">
-          <td-icon class="covalent-icon">work</td-icon>
+          <slot name="icon"></slot>
         </div>
         ${this.headline ? html`<h6 class="mdc-typography--headline6">${this.headline}</h6>` : html``}
         ${this.subtitle ? html`

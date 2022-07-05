@@ -20,8 +20,10 @@
   margin-right: auto;
 }
 
-.covalent-icon {
+[name="icon"]::slotted(*) {
   font-size: 40px;
+  width: 36px;
+  height: 36px;
 }
 
 .mdc-typography--headline6 {
