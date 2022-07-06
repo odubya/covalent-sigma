@@ -1,3 +1,20 @@
 @use "@material/card";
+@use '@material/typography/mdc-typography';
 
 @include card.core-styles;
+
+hr {
+    opacity: 0.12;
+    width: 100%;
+    margin: 0;
+}
+
+[name="empty-state"]::slotted(*) {
+    padding: 50px; 
+    width: 400px; 
+    height: 100px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+}
