@@ -1,6 +1,9 @@
-import { html, LitElement } from 'lit';
+import { addHasRemoveClass, BaseElement } from '@material/mwc-base/base-element';
+import { CloseReason } from '@material/banner/constants';
+
+import { html, LitElement, TemplateResult } from 'lit';
 import { classMap } from 'lit/directives/class-map';
-import { property } from 'lit/decorators';
+import { property, query } from 'lit/decorators';
 
 export class CardBase extends LitElement {
   /**
@@ -15,7 +18,6 @@ export class CardBase extends LitElement {
   @property()
   subTitle = '';
 
-  @property({type: Boolean}) actionBar = false;
   /**
    * Style the card as an outline variant
    */
@@ -28,21 +30,16 @@ export class CardBase extends LitElement {
     };
     return html`
       <div class="${classMap(classes)}">
-      ${this.cardTitle ? 
-        html`
-          <div class="mdc-card__actions mdc-typography--headline5">${this.cardTitle}</div>
-          <hr>
-        ` : ''}
         <div class="mdc-card__primary-action">
-          <slot name="card-content"></slot>
-          <slot name="empty-state"></slot>
+            <!-- <div class="mdc-card__media mdc-card__media--square">
+                <div class="mdc-card__media-content">Title</div>
+            </div> -->
+            <slot></slot>
+            <div class="mdc-card__ripple"></div>
         </div>
-        ${this.actionBar ? 
-        html`
-          <div class="mdc-card__actions">
+        <div class="mdc-card__actions">
             <slot name="card-actions"></slot>
-          </div>
-        ` : ''}
+        </div>
       </div>`;
   }
 }
