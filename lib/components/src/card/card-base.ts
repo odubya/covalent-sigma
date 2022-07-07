@@ -33,18 +33,9 @@ export class CardBase extends LitElement {
           width: 100%;
           margin: 0;
         }
-        h6 {
-          margin: 16px;
+        .mdc-typography--headline5 {
+          color: var(--mdc-theme-text-primary-on-background);
         }
-        .empty-state {
-          padding: 50px; 
-          width: 400px; 
-          height: 100px; 
-          display: flex; 
-          flex-direction: column; 
-          align-items: center; 
-          justify-content: center;
-        }  
       </style>
       <div class="${classMap(classes)}">
       ${this.cardTitle ? 
@@ -57,8 +48,7 @@ export class CardBase extends LitElement {
           <slot name="empty-state"></slot>
           ${this.emptyCaption ? 
           html`<div class='empty-state'}>
-            <h6 class="mdc-typography--caption">${this.emptyCaption}</h6>
-            <slot name="emptyAction"></slot>
+            
           </div>` : ''}
         </div>
         ${this.actionBar ? 
