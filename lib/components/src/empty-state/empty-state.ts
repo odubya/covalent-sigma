@@ -67,7 +67,7 @@ export class CovalentEmptyStateBase extends LitElement {
         </div>` : ''}
         ${this.headline ? html`<h6 class="mdc-typography--headline6">${this.headline}</h6>` : ''}
         ${this.subtitle ? html`
-        <p key={line} class="mdc-typography--caption">
+        <p key={line} class="mdc-typography--caption" style=${this.headline ? '' : 'margin-top:16px;'}>
           ${this.subtitle.split(/\n/).map(line => { return html`${line}<br>`})}
         </p>` : ''}
         <div class="buttonContainer" style=${this.subtitle ? '' : 'margin-top:0;'}>
