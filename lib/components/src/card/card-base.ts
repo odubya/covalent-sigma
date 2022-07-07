@@ -14,13 +14,14 @@ export class CardBase extends LitElement {
    */
   @property()
   subTitle = '';
-
+  /**
+   * Displays the action bar
+   */
   @property({type: Boolean}) actionBar = false;
   /**
    * Style the card as an outline variant
    */
   @property({type: Boolean}) outlined = false;
-  @property({type: String}) emptyCaption = '';
   override render() {
     const classes = {
       'mdc-card': true,
@@ -46,10 +47,6 @@ export class CardBase extends LitElement {
         <div class="mdc-card__primary-action">
           <slot name="card-content"></slot>
           <slot name="empty-state"></slot>
-          ${this.emptyCaption ? 
-          html`<div class='empty-state'}>
-            
-          </div>` : ''}
         </div>
         ${this.actionBar ? 
         html`

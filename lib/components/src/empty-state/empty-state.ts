@@ -20,7 +20,6 @@ export class CovalentEmptyStateBase extends LitElement {
     return html`
       <style>
         .content {
-          // padding: 50px; 
           width: 632px; 
           height: 300px;
           display: flex; 
@@ -29,7 +28,6 @@ export class CovalentEmptyStateBase extends LitElement {
           justify-content: center;
           text-align: center;
         }
-        
         .icon-background {
           display: flex;
           justify-content: center;
@@ -37,14 +35,12 @@ export class CovalentEmptyStateBase extends LitElement {
           width:96px;
           height:96px;
           border-radius: 50%;
-          background-color: rgba(0,0,0,0.04);
+          background-color: var(--mdc-theme-background);
           margin-left: auto;
           margin-right: auto;
         }
-        [name="icon"]::slotted(*) {
+        .covalent-icon {
           font-size: 40px;
-          width: 36px;
-          height: 36px;
         }
         .mdc-typography--headline6 {
           margin: 16px 0 8px 0;
@@ -65,14 +61,15 @@ export class CovalentEmptyStateBase extends LitElement {
         }
       </style>
       <div class="content mdc-typography">
-        ${this.icon ? html`<div class="icon-background">
+        ${this.icon ? html`
+        <div class="icon-background">
           <td-icon class='covalent-icon'>${this.icon}</td-icon>
         </div>` : ''}
-        ${this.headline ? html`<h6 class="mdc-typography--headline6">${this.headline}</h6>` : html``}
+        ${this.headline ? html`<h6 class="mdc-typography--headline6">${this.headline}</h6>` : ''}
         ${this.subtitle ? html`
         <p key={line} class="mdc-typography--caption">
           ${this.subtitle.split(/\n/).map(line => { return html`${line}<br>`})}
-        </p>` : html``}
+        </p>` : ''}
         <div class="buttonContainer" style=${this.subtitle ? '' : 'margin-top:0;'}>
           <slot name="buttons"></slot>
         </div>
