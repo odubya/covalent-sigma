@@ -36,7 +36,7 @@ export class CovalentToolbarBase extends TopAppBarBase {
                 <slot name="buttonActions" slot="actionItems"></slot>
             </td-top-app-bar class="breadcrumbs">
             ${this.breadcrumbs ? html`<td-top-app-bar>
-                <div slot="title">hello > hello > hello</div>
+                <div slot="title">Section title > Section title > Page title</div>
             </td-top-app-bar>` : ''}
         `
     }
