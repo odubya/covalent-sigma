@@ -44,6 +44,7 @@
   "dependencies": {
     "@material/card": "^14.0.0",
     "@material/dialog": "^13.0.0",
+    "@material/icon-button": "^14.0.0",
     "@material/mwc-button": "^0.25.1",
     "@material/mwc-checkbox": "^0.25.1",
     "@material/mwc-circular-progress": "^0.25.1",
@@ -64,6 +65,7 @@
     "@material/mwc-top-app-bar": "^0.25.1",
     "@material/mwc-top-app-bar-fixed": "^0.25.1",
     "@material/theme": "^13.0.0",
+    "@material/top-app-bar": "^14.0.0",
     "@webcomponents/webcomponentsjs": "^2.6.0",
     "anysort": "^2.0.0",
     "lit": "^2.0.0",
