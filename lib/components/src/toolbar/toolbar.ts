@@ -11,20 +11,30 @@ declare global {
 
 @customElement('td-toolbar')
 export class CovalentToolbarBase extends TopAppBarBase {
-  @property({type: Boolean}) breadcrumbs = false;
-
+  @property({type: Number}) breadcrumbs = 0;
+  
   static override styles = [styles];
   override render() {
-    return html
-    `
-    <td-top-app-bar>
-      <slot name="title" slot="title"></slot>
-      <slot name="iconActions" slot="actionItems"></slot>
-      <slot name="buttonActions" slot="actionItems"></slot>
-    </td-top-app-bar class="breadcrumbs">
-    ${this.breadcrumbs ? html`<td-top-app-bar>
-      <div slot="title">Section title > Section title > Page title</div>
-    </td-top-app-bar>` : ''}
+    // Create dummy data for the toolbar breadcrumbs.
+    const path: any[] = [];
+    for(let i = 0; i < this.breadcrumbs; i++) {
+      if(i == this.breadcrumbs-1) {
+        path.push(html`Page Title`);
+      }
+      else {
+        path.push(html`<span>Section title > </span>`);
+      }
+    }
+
+    return html`
+      <td-top-app-bar>
+        <slot name="title" slot="title"></slot>
+        <slot name="iconActions" slot="actionItems"></slot>
+        <slot name="buttonActions" slot="actionItems"></slot>
+      </td-top-app-bar>
+      ${this.breadcrumbs ? html`<td-top-app-bar>
+        <div slot="title" class="path">${path}</div>
+      </td-top-app-bar>` : ''}
     `
   }
 }

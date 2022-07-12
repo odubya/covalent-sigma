@@ -1,15 +1,17 @@
-@use "@material/icon-button";
-@use "@material/top-app-bar";
 @use '@material/typography/mdc-typography';
 
 td-top-app-bar {
-    --mdc-theme-primary: var(--mdc-theme-surface);
-    --mdc-theme-on-primary: var(--mdc-theme-text-primary-on-background);
-    border-bottom: solid 2px rgba(0,0,0,0.12);
+  --mdc-theme-primary: var(--mdc-theme-surface);
+  --mdc-theme-on-primary: var(--mdc-theme-text-primary-on-background);
+  border-bottom: solid 2px rgba(0,0,0,0.12);
 }
 [name="buttonActions"]::slotted(*) {
-    margin: 8px;
+  margin: 8px;
 }
-[name="breadcrumbs"]::slotted(*) {
-    padding-top: 20px;
+span {
+  color: var(--mdc-theme-text-secondary-on-background);
+}
+.path {
+  position: absolute;
+  bottom: 16px;
 }
