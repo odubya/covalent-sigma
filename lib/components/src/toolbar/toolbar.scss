@@ -2,7 +2,7 @@
 @use "@material/top-app-bar/mdc-top-app-bar";
 
 header {
-  border-bottom: solid 2px rgba(0,0,0,0.12);
+  border-bottom: solid 2px var(--mdc-theme-border);
   font-family: var(--mdc-typography-headline6-font-family);
   font-size: var(--mdc-typography-headline6-font-size);
   font-weight: var(--mdc-typography-headline6-font-weight);
