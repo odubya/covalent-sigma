@@ -7,19 +7,15 @@ header {
   font-size: var(--mdc-typography-headline6-font-size);
   font-weight: var(--mdc-typography-headline6-font-weight);
   line-height: var(--mdc-typography-headline6-line-height);
-  &.mdc-top-app-bar {
-    position: static;
-    background-color: transparent;
-    color: var(--mdc-theme-text-primary-on-background);
-  }
+}
+.mdc-top-app-bar {
+  position: static;
+  background-color: transparent;
+  color: var(--mdc-theme-text-primary-on-background);
 }
 [name="buttonActions"]::slotted(*) {
   margin: 8px;
 }
 span {
   color: var(--mdc-theme-text-secondary-on-background);
-}
-.path {
-  position: absolute;
-  bottom: 16px;
 }
