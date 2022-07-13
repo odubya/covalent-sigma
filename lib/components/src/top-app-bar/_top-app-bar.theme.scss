@@ -15,7 +15,7 @@
       --mdc-theme-primary: #{$primary};
       --mdc-theme-on-primary: #{$on-primary};
     }
-
+    
     @include top-app-bar.fill-color($surface);
     @include top-app-bar.ink-color($text-primary-on-background);
     @include top-app-bar.icon-ink-color($icon);

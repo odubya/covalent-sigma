@@ -1,9 +1,19 @@
 @use '@material/typography/mdc-typography';
+@use "@material/top-app-bar/mdc-top-app-bar";
 
-td-top-app-bar {
-  --mdc-theme-primary: var(--mdc-theme-surface);
-  --mdc-theme-on-primary: var(--mdc-theme-text-primary-on-background);
+header {
   border-bottom: solid 2px rgba(0,0,0,0.12);
+  &.mdc-top-app-bar {
+    position: static;
+    background-color: transparent;
+    color: var(--mdc-theme-text-primary-on-background);
+  }
+}
+[name="title"]::slotted(*) {
+  font-family: var(--mdc-typography-headline6-font-family);
+  font-size: var(--mdc-typography-headline6-font-size);
+  font-weight: var(--mdc-typography-headline6-font-weight);
+  line-height: var(--mdc-typography-headline6-line-height);
 }
 [name="buttonActions"]::slotted(*) {
   margin: 8px;
@@ -12,6 +22,10 @@ span {
   color: var(--mdc-theme-text-secondary-on-background);
 }
 .path {
+  font-family: var(--mdc-typography-headline6-font-family);
+  font-size: var(--mdc-typography-headline6-font-size);
+  font-weight: var(--mdc-typography-headline6-font-weight);
+  line-height: var(--mdc-typography-headline6-line-height);
   position: absolute;
   bottom: 16px;
 }
