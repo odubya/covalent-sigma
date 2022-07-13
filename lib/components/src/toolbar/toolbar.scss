@@ -3,17 +3,15 @@
 
 header {
   border-bottom: solid 2px rgba(0,0,0,0.12);
+  font-family: var(--mdc-typography-headline6-font-family);
+  font-size: var(--mdc-typography-headline6-font-size);
+  font-weight: var(--mdc-typography-headline6-font-weight);
+  line-height: var(--mdc-typography-headline6-line-height);
   &.mdc-top-app-bar {
     position: static;
     background-color: transparent;
     color: var(--mdc-theme-text-primary-on-background);
   }
-}
-[name="title"]::slotted(*) {
-  font-family: var(--mdc-typography-headline6-font-family);
-  font-size: var(--mdc-typography-headline6-font-size);
-  font-weight: var(--mdc-typography-headline6-font-weight);
-  line-height: var(--mdc-typography-headline6-line-height);
 }
 [name="buttonActions"]::slotted(*) {
   margin: 8px;
@@ -22,10 +20,6 @@ span {
   color: var(--mdc-theme-text-secondary-on-background);
 }
 .path {
-  font-family: var(--mdc-typography-headline6-font-family);
-  font-size: var(--mdc-typography-headline6-font-size);
-  font-weight: var(--mdc-typography-headline6-font-weight);
-  line-height: var(--mdc-typography-headline6-line-height);
   position: absolute;
   bottom: 16px;
 }
