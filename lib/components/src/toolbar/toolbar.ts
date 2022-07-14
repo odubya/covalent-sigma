@@ -18,7 +18,7 @@ export class CovalentToolbarBase extends TopAppBarBase {
     // Create dummy data for the toolbar breadcrumbs.
     let path: any[] = [];
     if(this.breadcrumbs > 5) {
-      path.push(html`<span>Section title > ... > </span>`);
+      path.push(html`<span>Section title <td-icon>chevron_right</td-icon> ... <td-icon>chevron_right</td-icon> </span>`);
       path.push('Page title');
     }
     else {
@@ -27,7 +27,7 @@ export class CovalentToolbarBase extends TopAppBarBase {
           path.push(`Page title`);
         }
         else {
-          path.push(html`<span>Section title > </span>`);
+          path.push(html`<span>Section title <td-icon>chevron_right</td-icon> </span>`);
         }
       }
     }

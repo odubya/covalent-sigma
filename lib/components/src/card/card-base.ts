@@ -28,21 +28,10 @@ export class CardBase extends LitElement {
       'mdc-card--outlined': this.outlined,
     };
     return html`
-      <style>
-        hr {
-          opacity: 0.12;
-          width: 100%;
-          margin: 0;
-        }
-        .mdc-typography--headline5 {
-          color: var(--mdc-theme-text-primary-on-background);
-        }
-      </style>
       <div class="${classMap(classes)}">
       ${this.cardTitle ? 
         html`
           <div class="mdc-card__actions mdc-typography--headline5">${this.cardTitle}</div>
-          <hr>
         ` : ''}
         <div class="mdc-card__primary-action">
           <slot name="card-content"></slot>

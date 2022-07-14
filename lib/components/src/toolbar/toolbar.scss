@@ -17,5 +17,7 @@ header {
   margin: 8px;
 }
 span {
+  display: inline-flex;
+  align-items: center;
   color: var(--mdc-theme-text-secondary-on-background);
 }
