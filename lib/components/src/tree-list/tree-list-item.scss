@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+.itemContent {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+}
+.itemContent:hover {
+    cursor: pointer;
+}
+.iconContainer {
+    display: flex;
+}
+[name="nest"]::slotted(*) {
+    margin-left: 16px;
+}
+.hidden {
+    display: none;
+}
+.visible {
+    display: flex;
+    flex-direction: column;
+}
+.endOfNest {
+    margin-left: 32px;
+    margin-top: 8px;
+    user-select: none;
+}
