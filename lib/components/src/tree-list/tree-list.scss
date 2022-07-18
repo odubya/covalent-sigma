@@ -1,7 +1,7 @@
 @use '@material/typography/mdc-typography';
 
 .container {
-    color: black;
+    color: var(--mdc-theme-text-primary-on-background);
     display: flex;
     flex-direction: column;
     justify-content: center;
