@@ -1,6 +1,8 @@
 @use '@material/typography/mdc-typography';
 
 .container {
+    color: black;
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }
