@@ -2,15 +2,15 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: fit-content;
-    margin-top: 8px;
+    width: 100%;
+    margin-top: 6px;
     padding: 2px 32px 2px 8px;
 }
 .itemContent:hover {
     cursor: pointer;
     background-color: var(--mdc-theme-surface-primary-highlight-hover);
     color: var(--mdc-theme-primary);
-    border-radius: 0 20px 20px 0;
+    border-radius: 0 16px 16px 0;
 }
 .mainContent {
     display: flex;
@@ -38,7 +38,7 @@ td-icon {
     line-height: var(--mdc-typography-caption-line-height);
 }
 [name="nest"]::slotted(*) {
-    padding-left: 16px;
+    margin-left: 16px;
 }
 .hidden {
     display: none;
