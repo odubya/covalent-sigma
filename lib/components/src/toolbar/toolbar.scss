@@ -1,0 +1,23 @@
+@use '@material/typography/mdc-typography';
+@use "@material/top-app-bar/mdc-top-app-bar";
+
+header {
+  border-bottom: solid 2px var(--mdc-theme-border);
+  font-family: var(--mdc-typography-headline6-font-family);
+  font-size: var(--mdc-typography-headline6-font-size);
+  font-weight: var(--mdc-typography-headline6-font-weight);
+  line-height: var(--mdc-typography-headline6-line-height);
+}
+.mdc-top-app-bar {
+  position: static;
+  background-color: transparent;
+  color: var(--mdc-theme-text-primary-on-background);
+}
+[name="buttonActions"]::slotted(*) {
+  margin: 8px;
+}
+span {
+  display: inline-flex;
+  align-items: center;
+  color: var(--mdc-theme-text-secondary-on-background);
+}
