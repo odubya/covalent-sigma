@@ -8,8 +8,8 @@
 }
 .itemContent:hover {
     cursor: pointer;
-    background-color: var(--mdc-theme-surface-primary-highlight-hover);
-    color: var(--mdc-theme-primary);
+    background-color: var(--mdc-theme-surface-neutral-highlight-hover);
+    // color: var(--mdc-theme-primary);
     border-radius: 0 16px 16px 0;
 }
 .mainContent {
