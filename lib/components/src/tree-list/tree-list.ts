@@ -19,7 +19,7 @@ class CovalentTreeList extends LitElement {
         `
     }
 }
-// Create event listener for td-tree-list-item's select event
+// Create event listener for td-tree-list-item's select event.
 document.addEventListener('select', (e: Event) => {handleSelect(e)});
 const handleSelect = (e: Event): void => {
     // All td-tree-list-item components.
@@ -34,6 +34,6 @@ const handleSelect = (e: Event): void => {
         item.shadowRoot!.querySelector('div.itemContent')?.classList.remove('selected');
     })
 
-    // Add the selected styling to the currently selected class
+    // Add the selected styling to the currently selected item.
     current!.classList.add('selected');
 }

@@ -22,7 +22,7 @@ class CovalentTreeListItem extends LitElement {
             'hidden': !this.isOpen,
             'visible': this.isOpen,
         };
-        // Classes that animate the arrows.
+        // Class map for animating the arrows.
         const animation = {
             'open': this.isOpen,
             'close': !this.isOpen
@@ -47,14 +47,16 @@ class CovalentTreeListItem extends LitElement {
             </slot>
         `
     }
-    // Toggles the dropdown for a list item.
     private _handleClick() {
+        // Toggles the dropdown for a list item.
         this.isOpen = !this.isOpen;
+        
         // Create and emit the select event; the tree-list component is listening for this.
         let event = new CustomEvent('select', {
             detail: {
                 message: `Emitting an event from ${this}`,
             },
+            // bubbles and composed are required in order to allow custom event to pass through shadow DOM boundary to td-tree-list.
             bubbles: true,
             composed: true,
         });
