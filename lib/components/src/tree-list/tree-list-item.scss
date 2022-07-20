@@ -9,8 +9,15 @@
 .itemContent:hover {
     cursor: pointer;
     background-color: var(--mdc-theme-surface-neutral-highlight-hover);
-    // color: var(--mdc-theme-primary);
     border-radius: 0 16px 16px 0;
+}
+.selected {
+    background-color: var(--mdc-theme-surface-primary-highlight);    
+    color: var(--mdc-theme-primary);
+    border-radius: 0 16px 16px 0;
+}
+.selected:hover {
+    background-color: var(--mdc-theme-surface-primary-highlight-hover);
 }
 .mainContent {
     display: flex;
@@ -59,6 +66,10 @@ td-icon {
     line-height: var(--mdc-typography-caption-line-height);
 }
 
+// Arrow icon should always be this color.
+.arrowIcon {
+    color: var(--mdc-theme-text-primary-on-background);
+}
 .open {
     transition: transform 100ms ease-out;
     transform: rotate(90deg);

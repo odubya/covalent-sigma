@@ -29,7 +29,7 @@ class CovalentTreeListItem extends LitElement {
         };
         const arrowIcon = 'arrow_right';
         const icon = html`<td-icon>${this.icon}</td-icon>`;
-        const arrow =  html`<td-icon class="${classMap(animation)}">${arrowIcon}</td-icon>`;
+        const arrow =  html`<td-icon class="${classMap(animation)} arrowIcon">${arrowIcon}</td-icon>`;
         // The nest slot should only take td-tree-list-item components. Otherwise use default value and display "No results".
         return html`
             <div class="itemContent" @click="${this._handleClick}">
@@ -50,5 +50,14 @@ class CovalentTreeListItem extends LitElement {
     // Toggles the dropdown for a list item.
     private _handleClick() {
         this.isOpen = !this.isOpen;
+        // Create and emit the select event; the tree-list component is listening for this.
+        let event = new CustomEvent('select', {
+            detail: {
+                message: `Emitting an event from ${this}`,
+            },
+            bubbles: true,
+            composed: true,
+        });
+        this.dispatchEvent(event);
     }
 }
