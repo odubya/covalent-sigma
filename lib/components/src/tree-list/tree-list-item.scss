@@ -1,10 +1,7 @@
 .itemContent {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    margin-top: 6px;
-    padding: 2px 32px 2px 8px;
+    padding: 0px 32px 0px var(--indent);
 }
 .itemContent:hover {
     cursor: pointer;
@@ -22,6 +19,7 @@
 .mainContent {
     display: flex;
     flex-direction: row;
+    padding: 4px 0px;
 }
 [name="label"]::slotted(*) {
     font-family: var(--mdc-typography-body1-font-family);
@@ -40,9 +38,6 @@
     font-weight: var(--mdc-typography-caption-font-weight);
     line-height: var(--mdc-typography-caption-line-height);
 }
-[name="nest"]::slotted(*) {
-    padding-left: 16px;
-}
 .hidden {
     display: none;
 }
@@ -51,17 +46,16 @@
     flex-direction: column;
 }
 .endOfNest {
-    padding-left: 38px;
-    margin-top: 8px;
+    padding: 8px;
+    padding-left: calc(var(--indent) + 28px);
     letter-spacing: 0.4px;
     user-select: none;
-    color: var(--mdc-theme-text-secondary-on-background);
+    color: var(--mdc-theme-text-disabled-on-background);
     font-family: var(--mdc-typography-caption-font-family);
     font-size: var(--mdc-typography-caption-font-size);
     font-weight: var(--mdc-typography-caption-font-weight);
     line-height: var(--mdc-typography-caption-line-height);
 }
-
 // Arrow icon should always be this color.
 .arrowIcon {
     color: var(--mdc-theme-text-primary-on-background);

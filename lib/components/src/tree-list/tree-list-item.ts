@@ -16,6 +16,10 @@ class CovalentTreeListItem extends LitElement {
     @property({type: Boolean}) isOpen = false;
     // Optional icon for each list item.
     @property({type: String}) icon = '';
+    // Indicates which nest level a list item is at.
+    @property({type: Number}) indentLevel = 0;
+    // How much left padding (px) to add for nested elements.
+    @property({type: Number}) indentMultiple = 16;
     override render() {
         // Class map for showing/hiding an item's content.
         const classes = {
@@ -30,9 +34,10 @@ class CovalentTreeListItem extends LitElement {
         const arrowIcon = 'arrow_right';
         const icon = html`<td-icon>${this.icon}</td-icon>`;
         const arrow =  html`<td-icon class="${classMap(animation)} arrowIcon">${arrowIcon}</td-icon>`;
+
         // The nest slot should only take td-tree-list-item components. Otherwise use default value and display "No results".
         return html`
-            <div class="itemContent" @click="${this._handleClick}">
+            <div class="itemContent" @click="${this._handleClick}" style="--indent:${this.indentLevel*this.indentMultiple+this.indentMultiple}px">
                 <div class="mainContent">
                     ${arrow}
                     ${icon}
@@ -40,8 +45,9 @@ class CovalentTreeListItem extends LitElement {
                 </div>
                 <slot name="extraContent"></slot>
             </div>
+            
             <slot name="nest" class="${classMap(classes)}">
-                <div class="endOfNest ${classMap(classes)}">
+                <div class="endOfNest" style="--indent:${this.indentLevel*this.indentMultiple+this.indentMultiple}px">
                     No results
                 </div>
             </slot>
