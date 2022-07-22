@@ -1,6 +1,5 @@
 .itemContent {
-    display: flex;
-    flex-direction: column;
+    // .itemContent is a div so its width will be the width of its parent.
     padding: 0px 32px 0px var(--indent);
 }
 .itemContent:hover {

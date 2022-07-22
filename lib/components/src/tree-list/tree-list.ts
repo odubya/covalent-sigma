@@ -14,7 +14,9 @@ class CovalentTreeList extends LitElement {
     override render() {
         return html`
         <div class="container">
-            <slot></slot> 
+            <div class="content">
+                <slot></slot> 
+            </div>
         </div>
         `
     }

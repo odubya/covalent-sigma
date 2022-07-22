@@ -45,7 +45,6 @@ class CovalentTreeListItem extends LitElement {
                 </div>
                 <slot name="extraContent"></slot>
             </div>
-            
             <slot name="nest" class="${classMap(classes)}">
                 <div class="endOfNest" style="--indent:${this.indentLevel*this.indentMultiple+this.indentMultiple}px">
                     No results
