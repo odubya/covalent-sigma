@@ -1,0 +1,39 @@
+@use '@material/dialog';
+body{
+  background-color: red;
+}
+@mixin dialog-theme($theme) {
+  $text: map-get($theme, text-primary-on-background);
+  $border: map-get($theme, divider);
+
+  --mdc-dialog-heading-ink-color: #{$text};
+  --mdc-dialog-content-ink-color: #{$text};
+  --mdc-dialog-scroll-divider-color: #{$border};
+
+  
+  .mdc-dialog {
+    @include dialog.title-ink-color($text);
+    @include dialog.content-ink-color($text);
+  }
+}
+
+.containerDiv{
+  width: 80vw;
+  height: 70vh;
+  background: white;
+
+  header{
+    width: 80vw;
+    background: #2b2589;
+    color: white;
+  }
+} 
+
+
+/*@use '@material/drawer';
+@use '@material/feature-targeting/feature-targeting';
+@use '@material/rtl/rtl';
+
+@include drawer.core-styles();
+@include drawer.dismissible-core-styles();
+@include drawer.modal-core-styles(); */
